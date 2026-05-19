@@ -7,6 +7,7 @@ Route::get('/helo', function () {
 });
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MahasiswaController;
 
 Route::get('/user', [UserController::class, 'index']);
 
@@ -14,6 +15,8 @@ Route::get('/user', [UserController::class, 'index']);
 Route::get('/', function () {
     return 'Selamat Datang di Laravel';
 });
+
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 
 // Routing Parameter
 Route::get('/produk/{id}', function ($id) {
@@ -34,3 +37,4 @@ Route::prefix('admin')->group(function () {
         return 'Data Products';
     });
 });
+
